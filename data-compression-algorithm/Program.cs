@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel.Design;
+using System.IO;
 
 namespace data_compression_algorithm
 {
@@ -7,7 +8,9 @@ namespace data_compression_algorithm
     {
         static void Main(string[] args)
         {
-            string source = "55555555555555555777789";
+            int imageWidth = 256;
+            int imageHeight = 256;
+            string source = FileLoader.GetImageData("../../../../img/data-sample-1.png", imageWidth, imageHeight);
             string compressed = "";
             string decompressed = "";
 
@@ -32,6 +35,7 @@ namespace data_compression_algorithm
             {
                 decompressed = Decompressor.Decompress(compressed);
                 Console.WriteLine(decompressed);
+                FileWriter.SaveImage("C:/users/felip/Desktop/image.png", imageWidth, imageHeight, decompressed);
             }
             catch (Exception ex)
             {

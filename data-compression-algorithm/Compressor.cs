@@ -25,10 +25,6 @@ namespace data_compression_algorithm
                     result += "0";
                     while (!NeedsCompression(source, i) || i == source.Length -1)
                     {
-                        if (source[i] == '8')
-                        {
-                            int a = 0;
-                        }
                         result += source[i];
                         if (i == source.Length)
                         {
@@ -42,6 +38,10 @@ namespace data_compression_algorithm
                             else
                                 break;
                         }
+                    }
+                    if (NeedsCompression(source, i))
+                    {
+                        result += "/";
                     }
                 }
             }

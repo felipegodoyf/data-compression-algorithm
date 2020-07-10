@@ -11,7 +11,7 @@ namespace data_compression_algorithm
         {
             string result = "";
 
-            string[] packets = GetPackets(compressed);
+            List<string> packets = GetPackets(compressed);
             foreach (string packet in packets)
             {
                 if (packet[0] == '1')
@@ -31,9 +31,19 @@ namespace data_compression_algorithm
             return result;
         }
 
-        static string[] GetPackets(string compressed)
+        static List<string> GetPackets(string compressed)
         {
-            return compressed.Split('/');
+            string[] packetArray = compressed.Split('/');
+            List<string> packetList = new List<string>();
+            foreach (string s in packetArray)
+            {
+                if (s != "")
+                {
+                    packetList.Add(s);
+                }
+            }
+
+            return packetList;
         }
     }
 }
