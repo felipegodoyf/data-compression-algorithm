@@ -42,6 +42,7 @@ namespace data_compression_algorithm
                     if (NeedsCompression(source, i))
                     {
                         result += "/";
+                        i--;
                     }
                 }
             }
@@ -52,7 +53,7 @@ namespace data_compression_algorithm
         static bool NeedsCompression(string source, int index)
         {
             char c = source[index];
-            for (int i=index +1; i < index +4 && i < source.Length; i++)
+            for (int i=index +1; i < source.Length && i < index + 4; i++)
             {
                 if (source[i] != c)
                 {

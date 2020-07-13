@@ -20,7 +20,7 @@ namespace data_compression_algorithm
                     float currentValue = 0;
                     try
                     {
-                        currentValue = values[(x * imageHeight) + y] * 255;
+                        currentValue = values[(x * imageHeight + y)] * 255;
                     }
                     catch (Exception ex)
                     {

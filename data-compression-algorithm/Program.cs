@@ -10,7 +10,7 @@ namespace data_compression_algorithm
         {
             int imageWidth = 256;
             int imageHeight = 256;
-            string source = FileLoader.GetImageData("../../../../img/data-sample-1.png", imageWidth, imageHeight);
+            string source = FileLoader.GetImageData(@"C:\Users\PICHAU\Desktop\data-sample-2.png", imageWidth, imageHeight);
             string compressed = "";
             string decompressed = "";
 
@@ -35,11 +35,11 @@ namespace data_compression_algorithm
             {
                 decompressed = Decompressor.Decompress(compressed);
                 Console.WriteLine(decompressed);
-                FileWriter.SaveImage("C:/users/felip/Desktop/image.png", imageWidth, imageHeight, decompressed);
+                FileWriter.SaveImage(@"image.png", imageWidth, imageHeight, decompressed);
             }
             catch (Exception ex)
             {
-                Console.WriteLine("ERROR: an exception ocurred during decompression:\n\n" + ex.StackTrace);
+                Console.WriteLine("ERROR: an exception ocurred during decompression:\n\n" + ex);
             }
         }
     }
