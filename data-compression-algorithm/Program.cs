@@ -10,7 +10,7 @@ namespace data_compression_algorithm
         {
             int imageWidth = 256;
             int imageHeight = 256;
-            string source = FileLoader.GetImageData(@"C:\Users\PICHAU\Desktop\data-sample-2.png", imageWidth, imageHeight);
+            string source = FileLoader.GetImageData(@"../../../../img/data-sample-2.png", imageWidth, imageHeight);
             string compressed = "";
             string decompressed = "";
 
